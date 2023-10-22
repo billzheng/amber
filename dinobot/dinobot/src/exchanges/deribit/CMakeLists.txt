@@ -1,0 +1,7 @@
+add_library(deribit_websocket deribit_websocket.cpp)
+target_link_libraries(deribit_websocket dinobot_websocket)
+
+add_library(deribit_exchange deribit_exchange.cpp)
+target_link_libraries(deribit_exchange deribit_websocket)
+target_link_libraries(deribit_exchange dinobot_ring_logger)
+target_link_libraries(deribit_exchange rest_client)

@@ -1,0 +1,8 @@
+add_library(binance_websocket binance_websocket.cpp)
+target_link_libraries(binance_websocket dinobot_websocket)
+
+add_library(binance_exchange binance_exchange.cpp)
+target_link_libraries(binance_exchange binance_websocket)
+target_link_libraries(binance_exchange dinobot_ring_logger)
+target_link_libraries(binance_exchange rest_client)
+

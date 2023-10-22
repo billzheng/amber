@@ -1,0 +1,13 @@
+BasedOnStyle: Microsoft
+CompactNamespaces: true
+AlignAfterOpenBracket: Align
+AlignTrailingComments: true
+BinPackArguments: false
+Standard: Cpp11
+TabWidth: 4
+UseTab: Never
+ColumnLimit:     120
+AlwaysBreakTemplateDeclarations: true
+PointerAlignment: Left
+AllowShortFunctionsOnASingleLine: All
+AlignConsecutiveAssignments: Consecutive

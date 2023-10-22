@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configuration>
+<sender_comp_id>M8A004N</sender_comp_id>
+<sender_sub_id>sub</sender_sub_id>
+<password>HR0JY</password>
+<account>account</account>
+<application_name>acutus</application_name>
+<app_version>1.2</app_version>
+<system_vendor>QCL</system_vendor>
+<sender_location>HK</sender_location>
+</configuration>

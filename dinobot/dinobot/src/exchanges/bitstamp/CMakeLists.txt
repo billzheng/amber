@@ -1,0 +1,7 @@
+add_library(bitstamp_websocket bitstamp_websocket.cpp)
+target_link_libraries(bitstamp_websocket dinobot_websocket)
+
+add_library(bitstamp_exchange bitstamp_exchange.cpp)
+target_link_libraries(bitstamp_exchange bitstamp_websocket)
+target_link_libraries(bitstamp_exchange dinobot_ring_logger)
+target_link_libraries(bitstamp_exchange rest_client)

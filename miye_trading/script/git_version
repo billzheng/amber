@@ -1,0 +1,49 @@
+#!/bin/bash
+# update a header file with the git version if it has changed
+set -e
+set -u
+#set -x
+
+LANG=C
+LC_ALL=C
+
+template()
+{
+cat <<HERE
+#ifndef GIT_VERSION_H
+#define GIT_VERSION_H
+#define GIT_VERSION "$1"
+#define GIT_URL "$2"
+#endif
+HERE
+}
+
+git_version()
+{
+	DATE=$(date +%Y%m%d)
+	REPO_REVISION=$(git rev-list HEAD --count 2>/dev/null)
+	ABBREV_COMMIT=$(git rev-list --full-history --all --abbrev-commit | head -1 2>/dev/null)
+	BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+	#LAST_TAG=$(shell git describe --tags $(LAST_TAG_COMMIT) )
+    GIT_URL="$(git config --get remote.origin.url 2>/dev/null)"
+    template "$REPO_REVISION.$ABBREV_COMMIT.$BRANCH.$DATE"  "$GIT_URL"
+}
+
+export LANG=C
+export LC_ALL=C
+
+if [[ ! -e git_version.h ]]; then
+    write_new=yes
+    new_ver=$(git_version)
+else
+    old_ver="$(cat git_version.h)"
+    new_ver="$(git_version)"
+
+    if [[ $old_ver != $new_ver ]]; then
+        write_new=yes
+    fi
+fi
+
+if [[ ${write_new:-} ]]; then
+    echo "$new_ver" > git_version.h
+fi

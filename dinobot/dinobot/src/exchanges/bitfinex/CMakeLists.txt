@@ -1,0 +1,7 @@
+add_library(bitfinex_websocket bitfinex_websocket.cpp)
+target_link_libraries(bitfinex_websocket dinobot_websocket)
+
+add_library(bitfinex_exchange bitfinex_exchange.cpp)
+target_link_libraries(bitfinex_exchange bitfinex_websocket)
+target_link_libraries(bitfinex_exchange dinobot_ring_logger)
+target_link_libraries(bitfinex_exchange rest_client)

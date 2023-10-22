@@ -1,0 +1,7 @@
+add_subdirectory(rings)
+add_subdirectory(rest)
+add_subdirectory(websocket)
+add_subdirectory(inifile)
+add_subdirectory(configs)
+add_subdirectory(json)
+add_subdirectory(orderbook)

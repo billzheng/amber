@@ -1,0 +1,9 @@
+add_library(coinbase_websocket coinbase_websocket.cpp)
+target_link_libraries(coinbase_websocket dinobot_websocket)
+
+add_library(coinbase_exchange coinbase_exchange.cpp)
+target_link_libraries(coinbase_exchange dinobot_websocket)
+target_link_libraries(coinbase_exchange coinbase_websocket)
+target_link_libraries(coinbase_exchange dinobot_ring_logger)
+target_link_libraries(coinbase_exchange rest_client)
+

@@ -1,0 +1,7 @@
+add_library(bitmex_websocket bitmex_websocket.cpp)
+target_link_libraries(bitmex_websocket dinobot_websocket)
+
+add_library(bitmex_exchange bitmex_exchange.cpp)
+target_link_libraries(bitmex_exchange bitmex_websocket)
+target_link_libraries(bitmex_exchange dinobot_ring_logger)
+target_link_libraries(bitmex_exchange rest_client)

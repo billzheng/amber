@@ -1,0 +1,27 @@
+brain dump of things we need to move forward
+
+= design questions
+    * single threaded?
+    * how will we backtest?
+    * gui? controll the apps?
+    * internal structures? ie, how will the normalised orderbook / tick / quote / trade data look?
+    = connectinos 
+	* websocket / REST / FIX - probably need to get all these coded up 
+	* guis? 
+
+= exchagnes
+    * research exchagnes 
+	* which exchagnes we need to connect to
+	* locations of matching engines 
+        * how to connect / best cloud servers to conenct into for best latency 
+	* how to bypass cloudfront / cloudflare CDNS if possible 
+	* exchagnes with margin ?
+    * how should we sign up 
+
+= infrastructure
+    * if all goes to plan and we have a fair few servers all over the placae we will 
+      need to have some form of cloud infra manager, i have been looking at terraform
+      for this, it looks like it will abstract away which cloud vendor we are using 
+      to speed up deployment
+    * same goes for config management, probably look at puppet, ansible, or, salt stack
+    

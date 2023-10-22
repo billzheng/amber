@@ -1,0 +1,5 @@
+qcl_application(test_cme_fix_istream_performance)
+
+add_test(test_cme_fix_istream_performance test_cme_fix_istream_performance)
+
+target_link_libraries(test_cme_fix_istream_performance boost_unit_test_framework /usr/local/lib/libbenchmark.a pthread )

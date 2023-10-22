@@ -1,0 +1,5 @@
+add_subdirectory(exchanges)
+add_subdirectory(libs)
+add_subdirectory(marketdata_recorders)
+add_subdirectory(strat)
+add_subdirectory(utils)
